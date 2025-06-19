@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, Sparkles, Stars } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Heart, Sparkles, Stars } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             }}
             style={{
               left: `${5 + i * 4.5}%`,
-              top: `${10 + (i * 3) % 80}%`,
+              top: `${10 + ((i * 3) % 80)}%`,
             }}
           />
         ))}
@@ -88,7 +88,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>
 
       {/* Header */}
-      <motion.header 
+      <motion.header
         className="bg-slate-900/80 backdrop-blur-xl border-b border-blue-800/50 shadow-2xl relative z-10"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -96,7 +96,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-3"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -113,7 +113,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     ease: "linear",
                   }}
                 >
-                  <Heart className="w-8 h-8 text-blue-400" fill="currentColor" />
+                  <Heart
+                    className="w-8 h-8 text-blue-400"
+                    fill="currentColor"
+                  />
                 </motion.div>
                 <motion.div
                   className="absolute -top-1 -right-1"
@@ -131,7 +134,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </motion.div>
               </div>
               <div>
-                <motion.h1 
+                <motion.h1
                   className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"
                   animate={{
                     backgroundPosition: ["0%", "100%", "0%"],
@@ -144,13 +147,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 >
                   TherapyAI
                 </motion.h1>
-                <p className="text-xs text-blue-300/80">Built with ❤️ using Bolt.new</p>
+                <p className="text-xs text-blue-300/80">
+                  Built with ❤️ By Samsoor Samander
+                </p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-medium shadow-lg border border-blue-400/30"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)",
               }}
@@ -175,20 +180,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </motion.header>
 
       {/* Main Content */}
-      <main className="relative z-10">
-        {children}
-      </main>
+      <main className="relative z-10">{children}</main>
 
       {/* Footer */}
       <footer className="bg-slate-900/90 backdrop-blur-xl text-blue-100 py-8 mt-16 border-t border-blue-800/50 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.p 
+          <motion.p
             className="text-blue-300/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            © 2025 TherapyAI - Revolutionizing Mental Health Support | Built with ❤️ using Bolt.new
+            © 2025 TherapyAI - Revolutionizing Mental Health Support | Built
+            with ❤️ using Bolt.new
           </motion.p>
         </div>
       </footer>
